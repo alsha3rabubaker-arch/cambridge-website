@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: alsha3rabubaker-arch/cambridge-website
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "programs"
+    label: "البرامج الأكاديمية"
+    folder: "data/programs"
+    create: true
+    fields:
+      - { label: "عنوان البرنامج", name: "title", widget: "string" }
+      - { label: "الوصف", name: "description", widget: "text" }
+      - { label: "المدة", name: "duration", widget: "string" }
