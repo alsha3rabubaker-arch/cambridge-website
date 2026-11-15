@@ -1,56 +1,128 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>البوابة الأكاديمية الرسمية</title>
+    <title>International Cambridge College | Institutional Credentials Verification Hub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header>
-        <div class="logo">
-            <h2>المركز الأكاديمي الدولي</h2>
-        </div>
+        <a href="index.html" class="brand">
+            <img src="images/logo.png" alt="ICC Crest" onerror="this.style.display='none'">
+            <div class="brand-text">
+                <h1>Cambridge</h1>
+                <span>International Cambridge College</span>
+            </div>
+        </a>
         <nav>
             <ul>
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="about.html">من نحن</a></li>
-                <li><a href="programs.html">البرامج الأكاديمية</a></li>
-                <li><a href="verification.html">التحقق من الشهادات</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About the College</a></li>
+                <li><a href="agents.html">Agents</a></li>
+                <li><a href="advisors.html">Advisors</a></li>
+                <li><a href="excellence.html">Excellence Award</a></li>
+                <li><a href="contact.html">Official Enquiry</a></li>
+                <li><a href="verification.html" class="btn-verifications">Verifications &#9662;</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="container">
-        <section class="hero">
-            <h1>مرحبًا بكم في البوابة الأكاديمية المعتمدة</h1>
-            <p>نقدم أفضل البرامج التعليمية والشهادات المهنية المعترف بها دوليًا.</p>
-        </section>
+    <div class="sub-banner"></div>
 
-        <section class="cards-grid">
-            <div class="card">
-                <h3>البرامج المعتمدة</h3>
-                <p>استكشف كافة الدبلومات والبرامج التدريبية المتاحة للعام الدراسي.</p>
-                <a href="programs.html">عرض البرامج &larr;</a>
+    <main class="page-container" id="verification-hub">
+        <div class="center-header">
+            <h2 class="hub-title">INSTITUTIONAL CREDENTIALS VERIFICATION HUB</h2>
+            <p class="hub-subtitle">Official public portal to authenticate certificates, accredited trainers, registered academies, excellence awards, quality assurance, agents, and advisors.</p>
+        </div>
+
+        <div class="tabs-bar">
+            <button class="tab-btn active" onclick="switchTab('certificates', this)">Certificates</button>
+            <button class="tab-btn" onclick="switchTab('trainers', this)">Trainers</button>
+            <button class="tab-btn" onclick="switchTab('academies', this)">Academies</button>
+            <button class="tab-btn" onclick="switchTab('excellence', this)">Excellence Award</button>
+            <button class="tab-btn" onclick="switchTab('quality', this)">Quality Assurance</button>
+            <button class="tab-btn" onclick="switchTab('agents', this)">Agents</button>
+            <button class="tab-btn" onclick="switchTab('advisors', this)">Advisors</button>
+        </div>
+
+        <div class="verify-card">
+            <div class="portal-header">
+                <span class="portal-label">&#128279; DIRECT PAGE PORTAL</span>
+                <a href="verification.html?type=certificates" id="directPortalLink" class="btn-direct-portal">Open Certificate Portal &rarr;</a>
             </div>
-            <div class="card">
-                <h3>خدمة التحقق الإلكتروني</h3>
-                <p>تتيح للمؤسسات والطلاب التحقق الفوري من صحة الشهادات والاعتمادات.</p>
-                <a href="verification.html">التحقق الآن &larr;</a>
+
+            <div class="verify-box">
+                <h3 id="hubBoxTitle">Verify Qualification Certificate</h3>
+                <p id="hubBoxDesc">Enter certificate number or serial code below:</p>
+
+                <div class="search-row">
+                    <input type="text" id="serialInput" placeholder="e.g., ICC-CERT-2026-001">
+                    <button onclick="runVerification()">Verify Now</button>
+                </div>
+
+                <div id="verificationResult"></div>
             </div>
-            <div class="card">
-                <h3>التسجيل والقبول</h3>
-                <p>تقديم طلبات القبول والاستفسار عن شروط التسجيل للدورات القادمة.</p>
-                <a href="contact.html">تقديم طلب &larr;</a>
-            </div>
-        </section>
-    </div>
+        </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 جميع الحقوق محفوظة للمركز الأكاديمي الدولي.</p>
+        <div class="footer-main">
+            <div class="footer-about">
+                <div class="brand">
+                    <img src="images/logo.png" alt="ICC Crest" onerror="this.style.display='none'">
+                    <div class="brand-text">
+                        <h1>Cambridge</h1>
+                        <span>International Cambridge College</span>
+                    </div>
+                </div>
+                <p>International Cambridge College is a premier British-aligned quality assurance body empowering educational institutions, certified trainers, and graduates with globally recognized accreditation and tamper-proof digital verification.</p>
+                <div class="region-badge">&#127757; MIDDLE EAST &amp; NORTH AFRICA</div>
+            </div>
+
+            <div class="footer-col">
+                <h4>MAIN PAGES</h4>
+                <ul>
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="about.html">About the College</a></li>
+                    <li><a href="agents.html">Institutional Agents</a></li>
+                    <li><a href="advisors.html">Cambridge Advisors</a></li>
+                    <li><a href="excellence.html">Excellence Award</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>VERIFICATION HUBS</h4>
+                <ul>
+                    <li><a href="#verification-hub" onclick="switchTabByName('certificates')">&#10003; Certificate Verification</a></li>
+                    <li><a href="#verification-hub" onclick="switchTabByName('trainers')">&#10003; Trainer Status Verification</a></li>
+                    <li><a href="#verification-hub" onclick="switchTabByName('academies')">&#10003; Academy Accreditation Lookup</a></li>
+                    <li><a href="#verification-hub" onclick="switchTabByName('excellence')">&#10003; Excellence Award Registry</a></li>
+                    <li><a href="#verification-hub" onclick="switchTabByName('quality')">&#10003; Quality Assurance Portal</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>ADMINISTRATION</h4>
+                <ul>
+                    <li><a href="contact.html">Official Enquiry Form</a></li>
+                    <li><a href="agents.html">Institutional Agents &amp; Partners</a></li>
+                </ul>
+                <p style="font-size:13px; color:#fff; font-weight:600; margin-top:16px;">Official Contact Email:</p>
+                <a href="mailto:info@cambridge-icc.uk" class="footer-email">&#9993; info@cambridge-icc.uk</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>&copy; 2026 International Cambridge College. All Rights Reserved.</span>
+            <div>
+                <a href="contact.html" style="color:#94a3b8; text-decoration:none; margin-right:20px;">Contact Support</a>
+                <a href="verification.html" style="color:#94a3b8; text-decoration:none;">Verification System</a>
+            </div>
+        </div>
     </footer>
 
+    <script src="js/verify.js"></script>
 </body>
 </html>
