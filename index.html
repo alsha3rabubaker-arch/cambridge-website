@@ -18,24 +18,24 @@
     /* GLOBAL HEADER STYLES */
     .icc-global-header { width: 100%; background: linear-gradient(135deg, #001229 0%, #002147 100%); border-bottom: 3px solid #c5a059; position: sticky; top: 0; z-index: 9999; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); }
     .icc-header-container { max-width: 1380px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
-    .icc-header-logo img { height: 58px; width: auto; display: block; }
+    .icc-header-logo img { height: 58px; width: auto; display: block; filter: brightness(1.05); }
     .icc-nav-menu { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
     .icc-nav-link { color: #f3f4f6; text-decoration: none; font-size: 0.84rem; font-weight: 600; padding: 6px 4px; transition: color 0.3s ease; white-space: nowrap; }
-    .icc-nav-link:hover { color: #c5a059; }
+    .icc-nav-link:hover, .icc-nav-link.active-page { color: #c5a059; }
     .icc-nav-link.iccs-highlight { color: #e0c38c; border-bottom: 1px dashed #c5a059; }
-    .icc-header-cta { background: linear-gradient(135deg, #c5a059 0%, #a8823c 100%); color: #001229; text-decoration: none; font-size: 0.84rem; font-weight: 800; padding: 9px 20px; border-radius: 6px; border: 1px solid #e0c38c; white-space: nowrap; }
+    .icc-header-cta { background: linear-gradient(135deg, #c5a059 0%, #a8823c 100%); color: #001229; text-decoration: none; font-size: 0.84rem; font-weight: 800; padding: 9px 20px; border-radius: 6px; border: 1px solid #e0c38c; white-space: nowrap; transition: all 0.3s ease; }
     .icc-header-cta:hover { background: #ffffff; color: #002147; }
     .icc-mobile-toggle { display: none; background: transparent; border: 1px solid #c5a059; color: #c5a059; font-size: 1.5rem; padding: 4px 12px; border-radius: 6px; cursor: pointer; }
 
     /* HERO & CONTENT */
     .hero-branding { width: 100%; background: linear-gradient(180deg, #f5f2eb 0%, #ffffff 100%); padding: 50px 20px; text-align: center; border-bottom: 2px solid var(--border-light); }
     .hero-container { max-width: 1350px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 28px; }
-    .region-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(139, 0, 0, 0.06); border: 1px solid rgba(139, 0, 0, 0.25); color: #8b0000; padding: 8px 26px; border-radius: 30px; font-size: 0.95rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+    .region-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(139, 0, 0, 0.06); border: 1px solid rgba(139, 0, 0, 0.25); color: #8b0000; padding: 8px 26px; border-radius: 30px; font-size: 0.95rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 18px; }
     .flags-grid-wrapper { width: 100%; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
     .flag-badge-item { display: flex; align-items: center; gap: 8px; background: #ffffff; border: 1px solid rgba(197, 160, 89, 0.35); padding: 6px 14px 6px 8px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
     .flag-img-icon { width: 32px; height: 22px; border-radius: 2px; object-fit: cover; border: 1px solid #eaeaea; }
     .flag-country-name { font-size: 0.82rem; font-weight: 600; color: var(--uk-navy); }
-    .hero-main-logo-img { width: 100%; max-width: 950px; height: auto; max-height: 250px; object-fit: contain; filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.08)); }
+    .hero-main-logo-img { width: 100%; max-width: 950px; height: auto; max-height: 250px; object-fit: contain; filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.08)); display: block; margin: 0 auto; }
     .hero-subtitle-text { font-size: 1.2rem; font-weight: 700; color: var(--uk-navy); letter-spacing: 1px; margin-top: 15px; font-family: 'Cinzel', serif; }
 
     /* STATS BAR */
@@ -46,7 +46,7 @@
     .stat-label { font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #e0e0e0; }
 
     /* GLOBAL FOOTER STYLES */
-    .icc-global-footer { width: 100%; background: linear-gradient(180deg, #001229 0%, #000b1a 100%); color: #d1d5db; border-top: 3px solid #c5a059; margin-top: 40px; }
+    .icc-global-footer { width: 100%; background: linear-gradient(180deg, #001229 0%, #000b1a 100%); color: #d1d5db; border-top: 3px solid #c5a059; }
     .icc-footer-container { max-width: 1350px; margin: 0 auto; padding: 60px 20px 45px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 35px; }
     .icc-footer-logo { max-width: 230px; height: auto; margin-bottom: 16px; }
     .icc-footer-desc { font-size: 0.86rem; line-height: 1.7; color: #9ca3af; }
@@ -74,20 +74,20 @@
   <!-- GLOBAL HEADER -->
   <header class="icc-global-header">
     <div class="icc-header-container">
-      <a href="https://www.cambridge-icc.uk" class="icc-header-logo">
+      <a href="index.html" class="icc-header-logo">
         <img src="https://lh3.googleusercontent.com/d/1ABTCT00zq2RxTK3H-kP7B3l6-DRWx5R1=w800" alt="International Cambridge College">
       </a>
-      <button class="icc-mobile-toggle" onclick="toggleIccMenu()">&#9776;</button>
+      <button class="icc-mobile-toggle" onclick="toggleIccMenu()" aria-label="Toggle Navigation">&#9776;</button>
       <nav class="icc-nav-menu" id="iccNavMenu">
-        <a href="https://www.cambridge-icc.uk" class="icc-nav-link">Home</a>
-        <a href="certificate-verification" class="icc-nav-link">Certificates</a>
-        <a href="coaches" class="icc-nav-link">Trainers</a>
-        <a href="accredited-academies" class="icc-nav-link">Academies</a>
-        <a href="agents" class="icc-nav-link">Agents</a>
-        <a href="cambridge-advisor" class="icc-nav-link">Advisors</a>
-        <a href="cambridge-excellence-award" class="icc-nav-link">Excellence Award</a>
-        <a href="iccs" class="icc-nav-link iccs-highlight">ICCS Standards</a>
-        <a href="accreditation-request" class="icc-header-cta">Apply Now</a>
+        <a href="index.html" class="icc-nav-link active-page">Home</a>
+        <a href="about.html" class="icc-nav-link">About Us</a>
+        <a href="verification.html" class="icc-nav-link">Verifications</a>
+        <a href="trainers.html" class="icc-nav-link">Trainers</a>
+        <a href="agents.html" class="icc-nav-link">Agents</a>
+        <a href="advisors.html" class="icc-nav-link">Advisors</a>
+        <a href="excellence.html" class="icc-nav-link">Excellence Award</a>
+        <a href="iccsstandards.html" class="icc-nav-link iccs-highlight">ICCS Standards</a>
+        <a href="contact.html" class="icc-header-cta">Apply / Enquiry</a>
       </nav>
     </div>
   </header>
@@ -98,16 +98,21 @@
       <div class="flags-grid-wrapper">
         <div class="flag-badge-item"><img src="https://flagcdn.com/w80/jo.png" class="flag-img-icon" alt="Jordan"><span class="flag-country-name">Jordan</span></div>
         <div class="flag-badge-item"><img src="https://flagcdn.com/w80/sa.png" class="flag-img-icon" alt="Saudi Arabia"><span class="flag-country-name">Saudi Arabia</span></div>
+        <div class="flag-badge-item"><img src="https://flagcdn.com/w80/ae.png" class="flag-img-icon" alt="UAE"><span class="flag-country-name">UAE</span></div>
+        <div class="flag-badge-item"><img src="https://flagcdn.com/w80/gb.png" class="flag-img-icon" alt="UK"><span class="flag-country-name">United Kingdom</span></div>
       </div>
       <div class="hero-main-logo-box">
         <div class="region-badge">&#127758; The Middle East & North Africa</div>
         <img src="https://lh3.googleusercontent.com/d/1ABTCT00zq2RxTK3H-kP7B3l6-DRWx5R1=w1600" alt="Logo" class="hero-main-logo-img">
         <div class="hero-subtitle-text">International Accreditation & Professional Recognition</div>
+        <div style="margin-top: 25px;">
+          <a href="verification.html" class="icc-header-cta" style="padding: 13px 32px; font-size: 0.95rem;">Open Verification Hub &rarr;</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FIXED STATS BAR (50000+, 3000+, 1700+) -->
+  <!-- STATS BAR -->
   <section class="stats-bar-section">
     <div class="stats-bar-container">
       <div class="stat-card"><div class="stat-number">50000+</div><div class="stat-label">Verified Certificates</div></div>
@@ -122,31 +127,39 @@
     <div class="icc-footer-container">
       <div class="icc-footer-col">
         <img src="https://lh3.googleusercontent.com/d/1ABTCT00zq2RxTK3H-kP7B3l6-DRWx5R1=w800" alt="ICC Crest" class="icc-footer-logo">
-        <p class="icc-footer-desc">International Cambridge College upholds British-aligned academic standards and digital credential verification.</p>
+        <p class="icc-footer-desc">International Cambridge College upholds British-aligned academic standards, professional qualification recognition, and tamper-proof digital credential verification worldwide.</p>
       </div>
       <div class="icc-footer-col">
         <h4>Verification Portals</h4>
         <ul>
-          <li><a href="certificate-verification">Certificate Verification</a></li>
-          <li><a href="coaches">Accredited Trainers</a></li>
-          <li><a href="accredited-academies">Partner Academies</a></li>
+          <li><a href="verification.html">All Credentials Hub</a></li>
+          <li><a href="trainers.html">Accredited Trainers</a></li>
+          <li><a href="excellence.html">Excellence Award Registry</a></li>
+          <li><a href="iccsstandards.html">ICCS Quality Standards</a></li>
         </ul>
       </div>
       <div class="icc-footer-col">
         <h4>Governance & Accreditation</h4>
         <ul>
-          <li><a href="iccs">ICCS Quality Standards</a></li>
-          <li><a href="cambridge-advisor">Board of Advisors</a></li>
-          <li><a href="accreditation-request">Apply for Accreditation</a></li>
+          <li><a href="about.html">About the College</a></li>
+          <li><a href="advisors.html">Board of Advisors</a></li>
+          <li><a href="agents.html">Authorized Regional Agents</a></li>
+          <li><a href="contact.html">Apply for Accreditation</a></li>
         </ul>
       </div>
       <div class="icc-footer-col">
         <h4>MENA Regional Office</h4>
-        <div class="icc-mena-box"><strong>Exclusive Agent (MENA):</strong><br><span>Decapolis for Media & Education</span><br><small>Amman, Jordan</small></div>
-        <a href="official-enquiry" class="icc-footer-enquiry-btn">Official Institutional Enquiry &rarr;</a>
+        <div class="icc-mena-box">
+          <strong>Exclusive Agent in the Middle East & North Africa:</strong><br>
+          <span>Decapolis for Media & Education</span><br>
+          <small>Amman, Hashemite Kingdom of Jordan</small>
+        </div>
+        <a href="contact.html" class="icc-footer-enquiry-btn">Official Institutional Enquiry &rarr;</a>
       </div>
     </div>
-    <div class="icc-footer-bottom"><p>&copy; 2026 International Cambridge College (UK). All Rights Reserved.</p></div>
+    <div class="icc-footer-bottom">
+      <p>&copy; 2026 International Cambridge College (UK). All Rights Reserved. | Academic Verification & Quality Governance.</p>
+    </div>
   </footer>
 
   <script>
