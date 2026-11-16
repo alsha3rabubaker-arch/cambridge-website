@@ -4,95 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Board of Advisors | International Cambridge College</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --uk-navy: #002147;
-      --uk-navy-dark: #001229;
-      --uk-gold: #c5a059;
-      --uk-gold-light: #e0c38c;
-      --bg-cream: #faf8f5;
-      --text-main: #1a1a1a;
-      --text-muted: #555555;
-      --border-light: rgba(197, 160, 89, 0.35);
-    }
-
+    :root { --uk-navy: #002147; --uk-navy-dark: #001229; --uk-gold: #c5a059; --uk-gold-light: #e0c38c; --bg-cream: #faf8f5; --text-main: #1a1a1a; --text-muted: #555555; --border-light: rgba(197, 160, 89, 0.35); }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-cream); color: var(--text-main); direction: ltr; line-height: 1.6; overflow-x: hidden; width: 100vw; }
 
     /* GLOBAL HEADER STYLES */
-    .icc-global-header {
-      width: 100%;
-      background: linear-gradient(135deg, #001229 0%, #002147 100%);
-      border-bottom: 3px solid #c5a059;
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-    }
-    .icc-header-container {
-      max-width: 1380px;
-      margin: 0 auto;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-    }
-    .icc-header-logo img {
-      height: 58px;
-      width: auto;
-      display: block;
-      filter: brightness(1.05);
-    }
-    .icc-nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .icc-nav-link {
-      color: #f3f4f6;
-      text-decoration: none;
-      font-size: 0.84rem;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      padding: 6px 4px;
-      transition: color 0.3s ease;
-      white-space: nowrap;
-    }
+    .icc-global-header { width: 100%; background: linear-gradient(135deg, #001229 0%, #002147 100%); border-bottom: 3px solid #c5a059; position: sticky; top: 0; z-index: 9999; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); }
+    .icc-header-container { max-width: 1380px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+    .icc-header-logo img { height: 58px; width: auto; display: block; filter: brightness(1.05); }
+    .icc-nav-menu { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .icc-nav-link { color: #f3f4f6; text-decoration: none; font-size: 0.84rem; font-weight: 600; padding: 6px 4px; transition: color 0.3s ease; white-space: nowrap; }
     .icc-nav-link:hover, .icc-nav-link.active-page { color: #c5a059; }
-    .icc-nav-link.iccs-highlight {
-      color: #e0c38c;
-      border-bottom: 1px dashed #c5a059;
-    }
-    .icc-header-cta {
-      background: linear-gradient(135deg, #c5a059 0%, #a8823c 100%);
-      color: #001229;
-      text-decoration: none;
-      font-size: 0.84rem;
-      font-weight: 800;
-      padding: 9px 20px;
-      border-radius: 6px;
-      border: 1px solid #e0c38c;
-      transition: all 0.3s ease;
-      white-space: nowrap;
-    }
+    .icc-nav-link.iccs-highlight { color: #e0c38c; border-bottom: 1px dashed #c5a059; }
+    .icc-header-cta { background: linear-gradient(135deg, #c5a059 0%, #a8823c 100%); color: #001229; text-decoration: none; font-size: 0.84rem; font-weight: 800; padding: 9px 20px; border-radius: 6px; border: 1px solid #e0c38c; white-space: nowrap; transition: all 0.3s ease; }
     .icc-header-cta:hover { background: #ffffff; color: #002147; }
-    .icc-mobile-toggle {
-      display: none;
-      background: transparent;
-      border: 1px solid #c5a059;
-      color: #c5a059;
-      font-size: 1.5rem;
-      padding: 4px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
+    .icc-mobile-toggle { display: none; background: transparent; border: 1px solid #c5a059; color: #c5a059; font-size: 1.5rem; padding: 4px 12px; border-radius: 6px; cursor: pointer; }
 
     /* PAGE HERO */
     .page-hero { background: linear-gradient(135deg, var(--uk-navy) 0%, var(--uk-navy-dark) 100%); color: #ffffff; padding: 65px 20px 50px; text-align: center; border-bottom: 3px solid var(--uk-gold); }
@@ -114,60 +44,14 @@
     .section-title p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
 
     .advisors-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
-    .advisor-card {
-      background: #ffffff;
-      border: 1.5px solid var(--border-light);
-      border-top: 4px solid var(--uk-gold);
-      border-radius: 14px;
-      padding: 34px 24px;
-      text-align: center;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .advisor-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--uk-gold);
-      box-shadow: 0 14px 32px rgba(197, 160, 89, 0.24);
-    }
-    .advisor-photo-box {
-      width: 130px;
-      height: 130px;
-      margin-bottom: 18px;
-      border-radius: 50%;
-      border: 3px solid var(--uk-gold);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-      overflow: hidden;
-      background: #fafafa;
-    }
+    .advisor-card { background: #ffffff; border: 1.5px solid var(--border-light); border-top: 4px solid var(--uk-gold); border-radius: 14px; padding: 34px 24px; text-align: center; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; }
+    .advisor-card:hover { transform: translateY(-6px); border-color: var(--uk-gold); box-shadow: 0 14px 32px rgba(197, 160, 89, 0.24); }
+    .advisor-photo-box { width: 130px; height: 130px; margin-bottom: 18px; border-radius: 50%; border: 3px solid var(--uk-gold); box-shadow: 0 5px 15px rgba(0,0,0,0.12); overflow: hidden; background: #fafafa; }
     .advisor-photo-box img { width: 100%; height: 100%; object-fit: cover; }
     .advisor-card h3 { font-family: 'Cinzel', serif; color: var(--uk-navy); font-size: 1.25rem; margin-bottom: 6px; }
     .advisor-specialty { font-size: 0.88rem; font-weight: 600; color: #7a5c21; margin-bottom: 12px; }
-    .badge-advisor {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: linear-gradient(135deg, var(--uk-navy) 0%, var(--uk-navy-dark) 100%);
-      color: var(--uk-gold);
-      border: 1px solid var(--uk-gold);
-      padding: 4px 16px;
-      border-radius: 20px;
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      margin-bottom: 16px;
-    }
-    .advisor-details {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      width: 100%;
-      border-top: 1px solid #f0f0f0;
-      padding-top: 12px;
-      margin-top: auto;
-      text-align: left;
-    }
+    .badge-advisor { display: inline-flex; align-items: center; gap: 6px; background: linear-gradient(135deg, var(--uk-navy) 0%, var(--uk-navy-dark) 100%); color: var(--uk-gold); border: 1px solid var(--uk-gold); padding: 4px 16px; border-radius: 20px; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 16px; }
+    .advisor-details { font-size: 0.86rem; color: var(--text-muted); width: 100%; border-top: 1px solid #f0f0f0; padding-top: 12px; margin-top: auto; text-align: left; }
     .advisor-details div { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 5px; }
     .advisor-details strong { color: var(--uk-navy); }
 
@@ -182,82 +66,24 @@
     .loading-box { grid-column: 1 / -1; text-align: center; padding: 50px; font-size: 1.1rem; color: var(--uk-navy); font-weight: 600; }
 
     /* GLOBAL FOOTER STYLES */
-    .icc-global-footer {
-      width: 100%;
-      background: linear-gradient(180deg, #001229 0%, #000b1a 100%);
-      color: #d1d5db;
-      border-top: 3px solid #c5a059;
-      font-family: 'Montserrat', sans-serif;
-    }
-    .icc-footer-container {
-      max-width: 1350px;
-      margin: 0 auto;
-      padding: 60px 20px 45px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 35px;
-    }
+    .icc-global-footer { width: 100%; background: linear-gradient(180deg, #001229 0%, #000b1a 100%); color: #d1d5db; border-top: 3px solid #c5a059; }
+    .icc-footer-container { max-width: 1350px; margin: 0 auto; padding: 60px 20px 45px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 35px; }
     .icc-footer-logo { max-width: 230px; height: auto; margin-bottom: 16px; }
     .icc-footer-desc { font-size: 0.86rem; line-height: 1.7; color: #9ca3af; }
-    .icc-footer-col h4 {
-      font-family: 'Cinzel', serif;
-      color: #c5a059;
-      font-size: 1.1rem;
-      margin-bottom: 18px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(197, 160, 89, 0.25);
-    }
+    .icc-footer-col h4 { font-family: 'Cinzel', serif; color: #c5a059; font-size: 1.1rem; margin-bottom: 18px; padding-bottom: 8px; border-bottom: 1px solid rgba(197, 160, 89, 0.25); }
     .icc-footer-col ul { list-style: none; padding: 0; }
     .icc-footer-col ul li { margin-bottom: 10px; }
     .icc-footer-col ul li a { color: #d1d5db; text-decoration: none; font-size: 0.86rem; transition: all 0.25s ease; }
     .icc-footer-col ul li a:hover { color: #c5a059; padding-left: 5px; }
-    .icc-mena-box {
-      background: rgba(255, 255, 255, 0.04);
-      border-left: 3px solid #c5a059;
-      padding: 14px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
+    .icc-mena-box { background: rgba(255, 255, 255, 0.04); border-left: 3px solid #c5a059; padding: 14px; border-radius: 6px; font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px; }
     .icc-mena-box strong { color: #e0c38c; }
-    .icc-footer-enquiry-btn {
-      display: inline-block;
-      padding: 10px 18px;
-      background: transparent;
-      border: 1px solid #c5a059;
-      color: #c5a059;
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 700;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-    }
+    .icc-footer-enquiry-btn { display: inline-block; padding: 10px 18px; border: 1px solid #c5a059; color: #c5a059; text-decoration: none; font-size: 0.82rem; font-weight: 700; border-radius: 6px; transition: all 0.3s ease; }
     .icc-footer-enquiry-btn:hover { background: #c5a059; color: #001229; }
-    .icc-footer-bottom {
-      background: #000812;
-      text-align: center;
-      padding: 18px 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.8rem;
-      color: #9ca3af;
-    }
+    .icc-footer-bottom { background: #000812; text-align: center; padding: 18px 20px; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.8rem; color: #9ca3af; }
 
     @media (max-width: 1120px) {
       .icc-mobile-toggle { display: block; }
-      .icc-nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #001229;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        padding: 20px;
-        border-bottom: 3px solid #c5a059;
-        gap: 14px;
-        text-align: center;
-      }
+      .icc-nav-menu { display: none; flex-direction: column; width: 100%; background: #001229; position: absolute; top: 100%; left: 0; padding: 20px; border-bottom: 3px solid #c5a059; gap: 14px; text-align: center; }
       .icc-nav-menu.open { display: flex; }
       .icc-header-cta { width: 80%; max-width: 280px; }
     }
@@ -269,20 +95,20 @@
   <!-- GLOBAL HEADER -->
   <header class="icc-global-header">
     <div class="icc-header-container">
-      <a href="https://www.cambridge-icc.uk" class="icc-header-logo">
+      <a href="index.html" class="icc-header-logo">
         <img src="https://lh3.googleusercontent.com/d/1ABTCT00zq2RxTK3H-kP7B3l6-DRWx5R1=w800" alt="International Cambridge College">
       </a>
       <button class="icc-mobile-toggle" onclick="toggleIccMenu()" aria-label="Toggle Navigation">&#9776;</button>
       <nav class="icc-nav-menu" id="iccNavMenu">
-        <a href="https://www.cambridge-icc.uk" class="icc-nav-link">Home</a>
-        <a href="certificate-verification" class="icc-nav-link">Certificates</a>
-        <a href="coaches" class="icc-nav-link">Trainers</a>
-        <a href="accredited-academies" class="icc-nav-link">Academies</a>
-        <a href="agents" class="icc-nav-link">Agents</a>
-        <a href="cambridge-advisor" class="icc-nav-link active-page">Advisors</a>
-        <a href="cambridge-excellence-award" class="icc-nav-link">Excellence Award</a>
-        <a href="iccs" class="icc-nav-link iccs-highlight">ICCS Standards</a>
-        <a href="accreditation-request" class="icc-header-cta">Apply Now</a>
+        <a href="index.html" class="icc-nav-link">Home</a>
+        <a href="about.html" class="icc-nav-link">About Us</a>
+        <a href="verification.html" class="icc-nav-link">Verifications</a>
+        <a href="trainers.html" class="icc-nav-link">Trainers</a>
+        <a href="agents.html" class="icc-nav-link">Agents</a>
+        <a href="advisors.html" class="icc-nav-link active-page">Advisors</a>
+        <a href="excellence.html" class="icc-nav-link">Excellence Award</a>
+        <a href="iccsstandards.html" class="icc-nav-link iccs-highlight">ICCS Standards</a>
+        <a href="contact.html" class="icc-header-cta">Apply / Enquiry</a>
       </nav>
     </div>
   </header>
@@ -319,7 +145,7 @@
     <div class="cta-container">
       <h2>Institutional & Advisory Nominations</h2>
       <p>Are you an academic leader or senior specialist seeking institutional accreditation or advisory fellowship?</p>
-      <a href="official-enquiry" class="apply-btn">Submit Advisory Enquiry &rarr;</a>
+      <a href="contact.html" class="apply-btn">Submit Advisory Enquiry &rarr;</a>
     </div>
   </section>
 
@@ -333,21 +159,19 @@
       <div class="icc-footer-col">
         <h4>Verification Portals</h4>
         <ul>
-          <li><a href="certificate-verification">Certificate Verification</a></li>
-          <li><a href="coaches">Accredited Trainers</a></li>
-          <li><a href="accredited-academies">Partner Academies</a></li>
-          <li><a href="cambridge-excellence-award">Excellence Award Registry</a></li>
-          <li><a href="preparatory-credentials">Preparatory Credentials</a></li>
+          <li><a href="verification.html">All Credentials Hub</a></li>
+          <li><a href="trainers.html">Accredited Trainers</a></li>
+          <li><a href="excellence.html">Excellence Award Registry</a></li>
+          <li><a href="iccsstandards.html">ICCS Quality Standards</a></li>
         </ul>
       </div>
       <div class="icc-footer-col">
         <h4>Governance & Accreditation</h4>
         <ul>
-          <li><a href="iccs">ICCS Quality Standards</a></li>
-          <li><a href="iccs-standards-directory">ICCS Standards Directory</a></li>
-          <li><a href="cambridge-advisor">Board of Advisors</a></li>
-          <li><a href="agents">Authorized Regional Agents</a></li>
-          <li><a href="accreditation-request">Apply for Accreditation</a></li>
+          <li><a href="about.html">About the College</a></li>
+          <li><a href="advisors.html">Board of Advisors</a></li>
+          <li><a href="agents.html">Authorized Regional Agents</a></li>
+          <li><a href="contact.html">Apply for Accreditation</a></li>
         </ul>
       </div>
       <div class="icc-footer-col">
@@ -357,7 +181,7 @@
           <span>Decapolis for Media & Education</span><br>
           <small>Amman, Hashemite Kingdom of Jordan</small>
         </div>
-        <a href="official-enquiry" class="icc-footer-enquiry-btn">Official Institutional Enquiry &rarr;</a>
+        <a href="contact.html" class="icc-footer-enquiry-btn">Official Institutional Enquiry &rarr;</a>
       </div>
     </div>
     <div class="icc-footer-bottom">
@@ -367,12 +191,10 @@
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    function toggleIccMenu() {
-      document.getElementById('iccNavMenu').classList.toggle('open');
-    }
+    function toggleIccMenu() { document.getElementById('iccNavMenu').classList.toggle('open'); }
 
-    // رابط شيت المستشارين (يرجى استبدال رقم الـ gid برقم ورقة المستشارين إذا كانت في ورقة منفصلة)
-    const ADVISORS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTEwUu3rrfQ2bSbLxmwkK3QRSJSO5tPiCUBFY_86ny30twlSAUr3biMbDzwVD20P24CK4Us5OLZn5iI/pub?gid=0&single=true&output=csv';
+    // رابط شيت المستشارين الصحيح (gid=21410697)
+    const ADVISORS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTEwUu3rrfQ2bSbLxmwkK3QRSJSO5tPiCUBFY_86ny30twlSAUr3biMbDzwVD20P24CK4Us5OLZn5iI/pub?gid=21410697&single=true&output=csv';
     const fallbackPhoto = 'https://via.placeholder.com/130?text=Advisor';
     let advisorsList = [];
 
